@@ -1,0 +1,23 @@
+# Initialize the adjacency matrix
+graph = []
+
+# Get the number of vertices from the user
+n = int(input("Enter number of vertices: "))
+
+# Fill the adjacency matrix with initial weights
+for i in range(n):
+    row = []
+    for j in range(n):
+        row.append(0)
+    graph.append(row)
+
+# Get the edges from the user and update the adjacency matrix
+for i in range(n):
+    for j in range(i+1, n):
+        elem = int(input(f"Enter weight of edge between vertices {i} and {j}, else enter 0: "))
+        graph[i][j] = elem
+        graph[j][i] = elem
+
+# Print the adjacency matrix
+for row in graph:
+    print(row)
